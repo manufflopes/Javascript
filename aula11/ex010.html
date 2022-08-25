@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Curso JS - Exercicio 10</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                background-color: rosybrown;
+                color: whitesmoke;
+                font: normal 20pt arial;
+            }
+            h1 {
+                color: blueviolet;
+            }
+            h2 {
+                color: aquamarine;
+            }
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #velocidade {
+                font: normal 20pt Arial;
+                background-color: palevioletred;
+                color: purple;
+                font-weight: bolder;
+                width: 600px;
+                border: 2px solid paleturquoise;
+                border-radius: 10px;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            span {
+                display: block;
+                margin-bottom: 20px;
+            }
+            input#txtvel,
+            #button {
+                width: 150px;
+                height: 50px;
+                font-size: 20px;
+                font-weight: bolder;
+            }
+            div#res,
+            #condutor {
+                margin-top: 30px;
+                color: purple;
+                font-size: 30px;
+                font-weight: bold;
+                border: 2px solid paleturquoise;
+                background-color: palevioletred;
+                border-radius: 10px;
+                width: 600px;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Olá, mundo !</h1>
+            <p>Já me livrei da maldição !!<strong> :D :D</strong></p>
+        </header>
+        <main>
+            <h1><strong>Sistema de Multas</strong></h1>
+            <div id="velocidade">
+                <span>Velocidade do carro:</span>
+                <div>
+                    <input type="number" name="txtvel" id="txtvel" />
+                    <input
+                        type="button"
+                        value="Verificar"
+                        onclick="calcular()"
+                        id="button"
+                    />
+                </div>
+            </div>
+            <div id="res"></div>
+            <div id="condutor" onclick="multado()">Será que fui multado ?</div>
+        </main>
+
+        <footer></footer>
+        <script>
+            function calcular() {
+                let txtv = document.querySelector('input#txtvel')
+                let res = document.querySelector('div#res')
+                if (!txtv.value) {
+                    res.innerHTML = `Informe a velocidade !`
+                    return
+                }
+
+                let police = document.querySelector('div#detran')
+                let vel = Number(txtv.value)
+                res.innerHTML = `Sua velocidade foi de ${vel} Km/h.`
+            }
+
+            function multado() {
+                let limite = 90
+                let velinfo = document.querySelector('input#txtvel')
+                if (!velinfo.value) {
+                    return
+                }
+                let veloci = Number(velinfo.value)
+                let detran = document.querySelector('div#condutor')
+                if (veloci <= 90) {
+                    detran.innerHTML = `Você dirigiu dentro do limite de velocidade que é ${limite} Km/h.<br>Foram ${
+                        limite - veloci
+                    } Km/h abaixo do permitido.<br><strong>NÃO será multado.</strong>`
+                } else {
+                    detran.innerHTML = `Você dirigiu fora do limite de velocidade que é ${limite} Km/h.<br>Foram ${
+                        veloci - limite
+                    } Km/h acima do permitido.<br><strong>SERÁ MULTADO.</strong>`
+                }
+            }
+        </script>
+    </body>
+</html>
