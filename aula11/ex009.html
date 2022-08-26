@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Curso JS - Exercicio 09</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                background-color: rosybrown;
+                color: whitesmoke;
+                font: normal 20pt arial;
+            }
+            h1 {
+                color: blueviolet;
+            }
+            h2 {
+                color: aquamarine;
+            }
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #nacionalidade {
+                font: normal 20pt Arial;
+                background-color: palevioletred;
+                color: purple;
+                font-weight: bolder;
+                width: 600px;
+                border: 2px solid paleturquoise;
+                border-radius: 10px;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            span {
+                display: block;
+                margin-bottom: 20px;
+            }
+            input#pais {
+                width: 300px;
+                height: 50px;
+                font-size: 20px;
+                font-weight: bolder;
+            }
+            input#button {
+                width: 120px;
+                height: 50px;
+                font-size: 20px;
+                font-weight: bolder;
+            }
+            div#res,
+            #nacional {
+                margin-top: 30px;
+                color: purple;
+                font-size: 30px;
+                font-weight: bold;
+                border: 2px solid paleturquoise;
+                background-color: palevioletred;
+                border-radius: 10px;
+                width: 600px;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Olá, mundo !</h1>
+            <span
+                >Eu sou a Manu e aluna do Curso em Vídeo de JavaScript !!<br />Neste
+                Exercício vamos as nacionalidades dos viajantes... <br /><strong
+                    >:D :D</strong
+                >
+            </span>
+        </header>
+        <main>
+            <h1>Validação de Nacionalidades</h1>
+            <div id="nacionalidade">
+                <span>De qual país você é ?</span>
+                <div>
+                    <input type="text" name="pais" id="pais"
+                    //onkeydown="if(!alphaOnly()) return" />
+                    <input
+                        type="button"
+                        value="Verificar"
+                        onclick="origem()"
+                        id="button"
+                    />
+                </div>
+            </div>
+            <div id="res"></div>
+            <div id="nacional" onclick="descobrir()">
+                Qual minha nacionalidade ?
+            </div>
+        </main>
+        <footer></footer>
+        <script>
+            // function alphaOnly() {
+            //     let pais = document.querySelector('input#pais')
+            //     var pattern = new RegExp(/[a-zA-Z]/i)
+            //     console.log(pattern.test(pais.value) )
+            //     return pattern.test(pais.value)
+            // }
+
+            let pais = document.querySelector('input#pais')
+            function origem() {
+                let res = document.querySelector('div#res')
+                if (!pais.value) {
+                    res.innerHTML = `Informe um país de Origem.`
+                    return
+                }
+                if (Number(pais.value)) {
+                    res.innerHTML = `Números não são permitidos.`
+                    return
+                }
+                let countryFrom = pais.value
+                res.innerHTML = `Seu país de origem é ${countryFrom}.`
+            }
+
+            function descobrir() {
+                let nacionality = pais.value
+                let nacional = document.querySelector('div#nacional')
+
+                const nacionalidades = {
+                    afeganistão: 'afegão (a)',
+                    'áfrica do sul': 'sul-africano (a)',
+                    albânia: 'albanês (a)',
+                    alemanha: 'alemão (a)',
+                    andorra: 'andorrano (a)',
+                    angola: 'angolano (a)',
+                    'antígua e barbuda': 'antiguano (a)',
+                    'arábia saudita': 'saudito (a)',
+                    argélia: 'argelino (a)',
+                    argentina: 'argentino (a)',
+                    armênia: 'armênio (a)',
+                    austrália: 'australiano (a)',
+                    áustria: 'austríaco (a)',
+                    azerbaidjão: 'azerbaijano (a)',
+                    bangladesh: 'bengalês (a)',
+                    barbados: 'barbadiano (a)',
+                    belarus: 'bielo-russo (a)',
+                    belize: 'belizenho (a)',
+                    bolívia: 'boliviano (a)',
+                    'bósnia-herzegóvina': 'bósnio (a)',
+                    botsuana: 'bechuano (a)',
+                    brasil: 'brasileiro (a)',
+                    brunei: 'bruneano (a)',
+                    bulgária: 'búlgaro (a)',
+                    burundi: 'burundinês (a)',
+                    butão: 'butanês (a)',
+                    'cabo verde': 'caboverdiano (a)',
+                    camarões: 'camaronês (a)',
+                    camboja: 'cambojano (a)',
+                    catar: 'catariano (a)',
+                    chade: 'chadiano (a)',
+                    chile: 'chileno (a)',
+                    china: 'chinês (a)',
+                    cingapura: 'cingapuriano (a)',
+                    colômbia: 'colombiano (a)',
+                    congo: 'congolês (a)',
+                    'coréia do norte': 'norte-coreano (a)',
+                    'coréia do sul': 'sul-coreano (a)',
+                    'costa rica': 'costarriquenho (a)',
+                    cuba: 'cubano (a)',
+                    dinamarca: 'dinamarquês (a)',
+                    djibuti: 'djibutiano (a)',
+                    dominica: 'dominicano (a)',
+                    egito: 'egípcio (a)',
+                    'el salvador': 'salvadorenho (a)',
+                    equador: 'equatoriano (a)',
+                    eritreia: 'eritreu (a)',
+                    eslováquia: 'eslovaco (a)',
+                    eslovênia: 'esloveno (a)',
+                    espanha: 'espanhol (a)',
+                    'estados unidos': 'americano (a)',
+                    estônia: 'estoniano (a)',
+                    'federação russa': 'russo (a)',
+                    fiji: 'fijiano (a)',
+                    filipinas: 'filipino (a)',
+                    finlândia: 'finlandês (a)',
+                    frança: 'francês (a)',
+                    gabão: 'gabonês (a)',
+                    gâmbia: 'gambiano (a)',
+                    gana: 'ganês (a)',
+                    geórgia: 'georgiano (a)',
+                    granada: 'granadino (a)',
+                    grécia: 'grego (a)',
+                    guatemala: 'guatemalteco (a)',
+                    guiana: 'guianês (a)',
+                    'guiné-equatorial': 'guinéu-equatoriano (a)',
+                    haiti: 'haitiano (a)',
+                    holanda: 'holandês (a)',
+                    honduras: 'hondurenho (a)',
+                    hungria: 'húngaro (a)',
+                    'ilhas marshall': 'marshalino (a)',
+                    'ilhas salomão': 'salomônico (a)',
+                    índia: 'indiano (a)',
+                    indonésia: 'indonésio (a)',
+                    irã: 'iraniano (a)',
+                    iraque: 'iraquiano (a)',
+                    irlanda: 'irlandês (a)',
+                    islândia: 'islandês (a)',
+                    itália: 'italiano (a)',
+                    jamaica: 'jamaicano (a)',
+                    japão: 'japonês (a)',
+                    jordânia: 'jordaniano (a)',
+                    kiribati: 'kiribatiano (a)',
+                    kuwait: 'kuwaitiano (a)',
+                    laos: 'laosiano (a)',
+                    lesoto: 'lesoto (a)',
+                    letônia: 'letão (a)',
+                    líbano: 'libanês (a)',
+                    libéria: 'liberiano (a)',
+                    líbia: 'líbio (a)',
+                    lituânia: 'lituano (a)',
+                    luxemburgo: 'luxemburguês (a)',
+                    macedônia: 'macedônio (a)',
+                    malásia: 'malaio (a)',
+                    malauí: 'malauiano (a)',
+                    maldivas: 'maldivo (a)',
+                    mali: 'malinês (a)',
+                    malta: 'maltês (a)',
+                    marrocos: 'marroquino (a)',
+                    maurício: 'mauriciano (a)',
+                    mauritânia: 'mauritano (a)',
+                    méxico: 'mexicano (a)',
+                    micronésia: 'micronésio (a)',
+                    moçambique: 'moçambicano (a)',
+                    mianmar: 'birmanês (a)',
+                    moldávia: 'moldávio (a)',
+                    mônaco: 'monegasco (a)',
+                    montenegro: 'montenegrino (a)',
+                    namíbia: 'namibiano (a)',
+                    nauru: 'nauruano (a)',
+                    nepal: 'nepalês (a)',
+                    níger: 'nigerino (a)',
+                    nigéria: 'nigeriano (a)',
+                    noruega: 'norueguês (a)',
+                    'nova zelândia': 'neozelandês (a)',
+                    panamá: 'panamenho (a)',
+                    'papua nova guiné': 'papuásio (a)',
+                    paquistão: 'paquistanês (a)',
+                    paraguai: 'paraguaio (a)',
+                    peru: 'peruano (a)',
+                    polônia: 'polonês (a)',
+                    portugal: 'português (a)',
+                    quênia: 'queniano (a)',
+                    'reino unido': 'inglês (a)',
+                    'república centro-africana': 'centro-africano (a)',
+                    'república dominicana': 'dominicano (a)',
+                    'república tcheca': 'tcheco (a)',
+                    romênia: 'romeno (a)',
+                    ruanda: 'ruandês (a)',
+                    samoa: 'samoano (a)',
+                    'san marino': 'samarinês (a)',
+                    'são vicente e granadinas': 'são-vicentino (a)',
+                    senegal: 'senegalês (a)',
+                    'serra leoa': 'leonês (a)',
+                    sérvia: 'sérvio (a)',
+                    síria: 'sírio (a)',
+                    'sri lanka': 'cingalês (a)',
+                    suazilândia: 'suazi (a)',
+                    sudão: 'sudanês (a)',
+                    suécia: 'suéco (a)',
+                    suíça: 'suíço (a)',
+                    suriname: 'surinamês (a)',
+                    tailândia: 'tailandês (a)',
+                    tanzânia: 'tanzaniano (a)',
+                    togo: 'togonês (a)',
+                    tonga: 'tongalês (a)',
+                    'trinidad e tobago': 'trinitino (a)',
+                    tunísia: 'tunisiano (a)',
+                    turquia: 'turco (a)',
+                    turcomenistão: 'turcomano (a)'
+                }
+                if (nacionalidades[nacionality.toLowerCase()]) {
+                    nacional.innerHTML = `Você é ${
+                        nacionalidades[nacionality.toLowerCase()]
+                    }.`
+                } else {
+                    nacional.innerHTML = `Não temos a informação em nossos registros. Peço entrar em contato com sua Embaixada.`
+                }
+
+                // if (nacionality.toLowerCase() == 'brasil') {
+                //     nacional.innerHTML = `Você é Brasileiro(a).`
+                // } else if (nacionality.toLowerCase() == 'china') {
+                //     nacional.innerHTML = `Você é Chinês(a).`
+                // } else if (nacionality.toLowerCase() == 'índia') {
+                //     nacional.innerHTML = `Você é Indiano(a).`
+                // } else if (nacionality.toLowerCase() == 'estados unidos') {
+                //     nacional.innerHTML = `Você é Americano(a).`
+                // } else if (nacionality.toLowerCase() == 'indonésia') {
+                //     nacional.innerHTML = `Você é Indonésio(a).`
+                // } else if (nacionality.toLowerCase() == 'paquistão') {
+                //     nacional.innerHTML = `Você é Paquistanês(a).`
+                // } else if (nacionality.toLowerCase() == 'nigéria') {
+                //     nacional.innerHTML = `Você é Nigeriano(a).`
+                // } else if (nacionality.toLowerCase() == 'canadá') {
+                //     nacional.innerHTML = `Você é Canadense.`
+                // } else if (nacionality.toLowerCase() == 'rússia') {
+                //     nacional.innerHTML = `Você é Russo(a).`
+                // } else if (nacionality.toLowerCase() == 'méxico') {
+                //     nacional.innerHTML = `Você é Mexicano(a).`
+                // } else if (nacionality.toLowerCase() == 'portugal') {
+                //     nacional.innerHTML = `Você é Português(a).`
+                // } else if (nacionality.toLowerCase() == 'alemanha') {
+                //     nacional.innerHTML = `Você é Alemão(ã).`
+                // } else if (nacionality.toLowerCase() == 'espanha') {
+                //     nacional.innerHTML = `Você é Espanhol(a).`
+                // } else {
+                //     nacional.innerHTML = `Não temos a informação em nossos registros. Peço entrar em contato com sua Embaixada.`
+                // }
+            }
+        </script>
+    </body>
+</html>
