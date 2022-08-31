@@ -15,26 +15,63 @@ section {
     background-color: lavender;
     color: black;
     border-radius: 10px;
-    width: 600px;
-    height: 450px;
+    width: 800px;
+    height: 600px;
     margin: auto;
     box-shadow: 3px 3px 10px;
     text-align: center;
 }
-#mensagem {
+
+#call {
     font-size: 18pt;
-    margin: 20px 0px 20px 0px;
+    margin: 20px 0px;
 }
 
-#resposta {
+/*título do programa*/
+#mensagem {
+    font-size: 16pt;
+    margin: 20px 0px;
+    height: 40px;
     text-align: center;
-    padding: 4px;
-    align-items: flex-end;
+    align-items: center;
+    font-weight: bold;
+}
+#txtano {
+    font-size: 16pt;
+    font-weight: bolder;
+    text-align: center;
 }
 
-#idade {
+#dadosIdade {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 100px;
+    text-align: center;
+    align-items: center;
+    margin: 20px 0px;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+#button {
+    height: 40px;
+    font-size: 16pt;
+    font-weight: bold;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: lavenderblush;
+}
+
+/*div com as imagens*/
+#resposta {
+    margin-top: 20px;
+}
+
+#idade,
+#geraçao {
     width: 250px;
     height: 250px;
+    margin: 20px 40px;
 }
 
 footer {

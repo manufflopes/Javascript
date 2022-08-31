@@ -1,24 +1,71 @@
-// function carregar() {
-//     let mensagem = document.querySelector('div#mensagem')
-//     let imagens = document.querySelector('img#horario')
-//     const data = new Date()
-//     const hora = data.getHours()
-//     const minutes = data.getMinutes()
-//     const day = new Date().toLocaleDateString()
-
-//     mensagem.innerHTML = `Agora são <strong>${hora}:${minutes}</strong> do dia <strong>${day}</strong>.`
-
-//     if (hora >= 6 && hora < 12) {
-//         imagens.src = './imagens/fotomanha.png'
-//         document.body.style.background = '#f0c06d'
-//     } else if (hora >= 12 && hora < 18) {
-//         imagens.src = './imagens/fotoentardecer.png'
-//         document.body.style.background = '#edbca2'
-//     } else if (hora >= 18 && hora < 24) {
-//         imagens.src = `./imagens/fotonoite.png`
-//         document.body.style.background = '#374051'
-//     } else {
-//         imagens.src = './imagens/fotomadrugada.png'
-//         document.body.style.background = '#0d0a0b'
-//     }
-// }
+function verificar() {
+    let data = new Date()
+    let ano = data.getFullYear()
+    let fano = document.querySelector('input#txtano')
+    let imgPessoas = document.querySelector('img#idade')
+    let imgGeraçao = document.querySelector('img#geraçao')
+    let resposta = document.querySelector('div#resposta')
+    if (
+        fano.value.length == 0 ||
+        Number(fano.value) > ano ||
+        Number(fano.value) == 0
+    ) {
+        window.alert('[ERRO] Verifique os dados e tente novamente !')
+    } else {
+        let fsex = document.getElementsByName('radsex')
+        let idade = ano - Number(fano.value)
+        let genero = ' '
+        if (fsex[0].checked) {
+            genero = 'Masculino'
+            if (idade >= 0 && idade < 3) {
+                imgPessoas.src = './imagens/idades/bebeH.png'
+                imgGeraçao.src = './imagens/geraçao/alpha.png'
+                
+            } else if (idade < 10) {
+                imgPessoas.src = './imagens/idades/menino.png'
+                imgGeraçao.src = './imagens/geraçao/alpha.png'
+            } else if (idade < 15) {
+                imgPessoas.src = './imagens/idades/adolescH.png'
+                imgGeraçao.src = './imagens/geraçao/geraçaoZ.png'
+            } else if (idade < 25) {
+                imgPessoas.src = './imagens/idades/jovemH.png'
+                imgGeraçao.src = './imagens/geraçao/geraçaoZ.png'
+            } else if (idade < 40) {
+                imgPessoas.src = './imagens/idades/adultH.png'
+                imgGeraçao.src = './imagens/geraçao/millenial.png'
+            } else if (idade < 65) {
+                imgPessoas.src = './imagens/idades/meiaIdadeH.png'
+                imgGeraçao.src = './imagens/geraçao/geraçaoX.png'
+            } else {
+                imgPessoas.src = './imagens/idades/idosoH.png'
+                imgGeraçao.src = './imagens/geraçao/babyBoomers.png'
+            }
+        } else if (fsex[1].checked) {
+            genero = 'Feminino'
+            if (idade >= 0 && idade < 3) {
+                imgPessoas.src = './imagens/idades/bebeM.png'
+                imgGeraçao.src = './imagens/geraçao/alpha.png'
+            } else if (idade < 10) {
+                imgPessoas.src = './imagens/idades/menina.png'
+                imgGeraçao.src = './imagens/geraçao/alpha.png'
+            } else if (idade < 15) {
+                imgPessoas.src = './imagens/idades/adolescM.png'
+                imgGeraçao.src = './imagens/geraçao/geraçaoZ.png'
+            } else if (idade < 25) {
+                imgPessoas.src = './imagens/idades/jovemM.png'
+                imgGeraçao.src = './imagens/geraçao/geraçaoZ.png'
+            } else if (idade < 40) {
+                imgPessoas.src = './imagens/idades/adultM.png'
+                imgGeraçao.src = './imagens/geraçao/millenial.png'
+            } else if (idade < 65) {
+                imgPessoas.src = './imagens/idades/meiaIdadeM.png'
+                imgGeraçao.src = './imagens/geraçao/geraçaoY.png'
+            } else {
+                imgPessoas.src = './imagens/idades/idosoM.png'
+                imgGeraçao.src = './imagens/geraçao/babyBoomers.png'
+            }
+        }
+    }
+   
+    calculo.innerHtml = `Você é do gênero ${genero} e tem ${idade} anos. Pertence à geração ${epoca}.`
+}
