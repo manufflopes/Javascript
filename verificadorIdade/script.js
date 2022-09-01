@@ -59,7 +59,7 @@ function verificar() {
                 imgGeraçao.src = './imagens/geraçao/millenial.png'
             } else if (idade < 65) {
                 imgPessoas.src = './imagens/idades/meiaIdadeM.png'
-                imgGeraçao.src = './imagens/geraçao/geraçaoY.png'
+                imgGeraçao.src = './imagens/geraçao/geraçaoX.png'
             } else {
                 imgPessoas.src = './imagens/idades/idosoM.png'
                 imgGeraçao.src = './imagens/geraçao/babyBoomers.png'
