@@ -19,11 +19,13 @@
             </div>
             <p id="mensagem">
                 Ano de Nascimento:
-                <input type="number" name="txtano" id="txtano" min="0" />
+                <input type="number" name="txtano" id="txtano" min="0"/>
+                <p id="alert"></p>
             </p>
             <div>
                 <p id="dadosIdade">
                     Sexo:
+                    <!-- IMPORTANTE: no caso do 'name' dos inputs para Masculino e Feminino ambos precisam ter o mesmo 'name' se não o checked vai ficar marcado para os dois -->
                     <input type="radio" name="radsex" id="mas" checked />
                     <label for="mas">Masculino</label>
                     <input type="radio" name="radsex" id="fem" />
@@ -36,12 +38,11 @@
                     />
                 </p>
                 <p></p>
+            </div>           
+            <div id="resposta">
+              
             </div>
             <div id="calculo"></div>
-            <div id="resposta">
-                <img id="idade" src="./imagens/idades/duvida.png" alt="" />
-                <img id="geraçao" src="./imagens/geraçao/duvida.png" alt="" />
-            </div>
         </section>
         <footer>
             <p>&copy; CursoemVídeo by ManuFreitas</p>
