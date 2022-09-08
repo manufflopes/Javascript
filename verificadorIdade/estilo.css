@@ -65,13 +65,7 @@ section {
 /*div com as imagens*/
 #resposta {
     margin-top: 20px;
-}
-
-#idade,
-#geracao {
-    width: 250px;
-    height: 250px;
-    margin: 20px 40px;
+    display: block;
 }
 
 footer {

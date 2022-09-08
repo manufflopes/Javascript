@@ -7,20 +7,19 @@
         <title>Verificador de Idade</title>
         <link rel="stylesheet" href="./estilo.css" />
     </head>
-    <body onload="carregar()">
+    <body>
         <header>
             <h1>Verificador de Idade</h1>
         </header>
         <section>
             <div id="call">
                 Preencha os dados abaixo e descubra<br /><strong
-                    >Qual a sua Idade e a qual geração você Pertence</strong
+                    >Qual a sua Idade e a qual Geração você Pertence</strong
                 >
             </div>
             <p id="mensagem">
                 Ano de Nascimento:
-                <input type="number" name="txtano" id="txtano" min="0"/>
-                <p id="alert"></p>
+                <input type="number" name="txtano" id="txtano" min="0" />
             </p>
             <div>
                 <p id="dadosIdade">
@@ -37,12 +36,11 @@
                         onclick="verificar()"
                     />
                 </p>
-                <p></p>
-            </div>           
-            <div id="resposta">
-              
             </div>
-            <div id="calculo"></div>
+
+            <div id="resposta">
+                <span id="img"></span>
+            </div>
         </section>
         <footer>
             <p>&copy; CursoemVídeo by ManuFreitas</p>
