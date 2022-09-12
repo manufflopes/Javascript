@@ -1,0 +1,43 @@
+body {
+    background-color: plum;
+    font: normal 20pt arial;
+    display: block;
+    align-items: center;
+}
+header {
+    color: whitesmoke;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+}
+section {
+    border: 4px solid grey;
+    background-color: lavender;
+    color: black;
+    border-radius: 10px;
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    box-shadow: 3px 3px 10px;
+    text-align: left;
+    padding:  20px;
+    font-weight: bolder;
+}
+
+
+#button {
+    height: 40px;
+    font-size: 16pt;
+    font-weight: bold;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: lavenderblush;
+}
+
+footer {
+    color: whitesmoke;
+    font-weight: bolder;
+    font-size: medium;
+    text-align: center;
+    font-style: italic;
+}
