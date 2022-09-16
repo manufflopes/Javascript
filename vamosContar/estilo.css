@@ -33,6 +33,14 @@ section {
     font-weight: bold;
     background-color: lavenderblush;
 }
+#reload {
+    height: 40px;
+    font-size: 16pt;
+    font-weight: bold;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: lavenderblush;
+}
 
 footer {
     color: whitesmoke;

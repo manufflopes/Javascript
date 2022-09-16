@@ -20,7 +20,7 @@
                         name="txtstart"
                         id="txtStart"
                         min="0"
-                        value="0"
+                        value=""
                     />
                 </p>
                 <p>
@@ -30,7 +30,7 @@
                         name="txtend"
                         id="txtEnd"
                         min="0"
-                        value="10"
+                        value=""
                     />
                 </p>
                 <p>
@@ -39,7 +39,7 @@
                         type="number"
                         name="txtstep"
                         id="txtStep"
-                        value="1"
+                        value=""
                     />
                 </p>
             </div>
@@ -48,8 +48,14 @@
                     <input
                         type="button"
                         id="button"
-                        value="Contar"
+                        value="Count"
                         onclick="contar()"
+                    />
+                    <input
+                        type="button"
+                        id="reload"
+                        value="Refresh"
+                        onclick="refresh()"
                     />
                 </p>
                 <p id="resp">Preparing to count...</p>
